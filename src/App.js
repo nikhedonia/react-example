@@ -52,8 +52,9 @@ class Playground extends Component {
 
 
   onClick(e) {
-    const {top, left} = e.target.getBoundingClientRect();
-    console.log({top, left}, e.clientY, e.clientX);
+    const {top, left} = this.refs.
+      playground.getBoundingClientRect();
+
     this.setState({
       targetX: e.clientX-left,
       targetY: e.clientY-top
@@ -68,6 +69,7 @@ class Playground extends Component {
 
     return (
       <svg
+        ref="playground"
         className="playground"
         width="500"
         height="500"
